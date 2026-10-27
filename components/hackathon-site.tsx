@@ -8,7 +8,7 @@ const APPLICATION_URL = process.env.NEXT_PUBLIC_APPLICATION_URL || 'https://hack
 const navItems = [
   ['About', 'about'],
   ['Partners', 'partners'],
-  ['Mentors & Judges', 'mentors'],
+  ['Speakers & Judges', 'mentors'],
   ['FAQs', 'faqs'],
 ]
 
@@ -73,11 +73,11 @@ const partners: Partner[] = [
 ]
 
 const people = [
-  { name: 'Daavya Vaishnav', role: 'Speaker', company: 'Marketing India - Cake Wallet', url: 'https://x.com/Daavya_vaishnav', initials: 'D', image: '/Daavya.png' },
   { name: 'Davin Dong', role: 'Judge', company: 'Founder of Cookiy Labs', initials: 'DD', image: '/Davin Dong .jpeg' },
+  { name: 'Daavya Vaishnav', role: 'Speaker', company: 'Marketing India - Cake Wallet', url: 'https://x.com/Daavya_vaishnav', initials: 'D', image: '/Daavya.png' },
   { name: 'Rohan Kochhar', role: 'Speaker', company: 'India Growth - Wispr Flow', initials: 'RK', image: '/Rohan.png' },
   { name: 'Devanshu', role: 'Speaker', company: 'Devrel - Tiger graph', url: 'https://x.com/devanshucodes', initials: 'D', image: '/Devanshu.png' },
-  { name: 'Telamon Ardavanis', role: 'Mentor', company: 'Edge City', url: 'https://x.com/TelamonArdavani', initials: 'TA', image: '/telamon.png' },
+  { name: 'Telamon Ardavanis', role: 'Speaker', company: 'Edge City', url: 'https://x.com/TelamonArdavani', initials: 'TA', image: '/telamon.png' },
 ]
 
 const faqs = [

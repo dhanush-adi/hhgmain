@@ -77,6 +77,7 @@ const people = [
   { name: 'Davin Dong', role: 'Judge', company: 'Founder of Cookiy Labs', initials: 'DD', image: '/Davin Dong .jpeg' },
   { name: 'Rohan Kochhar', role: 'Speaker', company: 'India Growth - Wispr Flow', initials: 'RK', image: '/Rohan.png' },
   { name: 'Devanshu', role: 'Speaker', company: 'Devrel - Tiger graph', url: 'https://x.com/devanshucodes', initials: 'D', image: '/Devanshu.png' },
+  { name: 'Telamon Ardavanis', role: 'Mentor', company: 'Edge City', url: 'https://x.com/TelamonArdavani', initials: 'TA', image: '/telamon.png' },
 ]
 
 const faqs = [

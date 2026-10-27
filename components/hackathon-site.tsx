@@ -8,7 +8,7 @@ const APPLICATION_URL = process.env.NEXT_PUBLIC_APPLICATION_URL || 'https://hack
 const navItems = [
   ['About', 'about'],
   ['Partners', 'partners'],
-  ['Speakers & Judges', 'mentors'],
+  ['Speakers & Judges', 'speakers'],
   ['FAQs', 'faqs'],
 ]
 
@@ -177,7 +177,7 @@ function Partners() {
 }
 
 function PeopleSection() {
-  return <section className="section people" id="mentors"><div className="container"><div className="section-head people-head"><div><SectionLabel>03 / the people</SectionLabel><h2>Mentors<br /><span>& judges.</span></h2></div></div><div className="people-grid">{people.map((person, i) => <article className="person-card" key={i}><div className={`portrait portrait-${i}`}>{person.image ? <img src={person.image} alt={person.name} /> : <span>{person.initials}</span>}</div><div className="person-info"><div><h3>{person.name}</h3><p>{person.role} · {person.company}</p></div>{person.url ? <a href={person.url} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on X`}><ExternalLink /></a> : <span className="person-placeholder" aria-label="Profile link to be confirmed"><ExternalLink /></span>}</div></article>)}</div></div></section>
+  return <section className="section people" id="speakers"><div className="container"><div className="section-head people-head"><div><SectionLabel>03 / the people</SectionLabel><h2>Speakers<br /><span>& judges.</span></h2></div></div><div className="people-grid">{people.map((person, i) => <article className="person-card" key={i}><div className={`portrait portrait-${i}`}>{person.image ? <img src={person.image} alt={person.name} /> : <span>{person.initials}</span>}</div><div className="person-info"><div><h3>{person.name}</h3><p>{person.role} · {person.company}</p></div>{person.url ? <a href={person.url} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on X`}><ExternalLink /></a> : <span className="person-placeholder" aria-label="Profile link to be confirmed"><ExternalLink /></span>}</div></article>)}</div></div></section>
 }
 
 function FAQs() {

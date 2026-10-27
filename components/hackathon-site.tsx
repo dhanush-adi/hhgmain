@@ -13,13 +13,13 @@ const navItems = [
 ]
 
 const partners = [
-  ['AI Grants', 'https://aigrants.in'],
+  ['Wispr Flow', 'https://wisprflow.ai'],
   ['Cake Wallet', 'https://cakewallet.com'],
+  ['AI Grants', 'https://aigrants.in'],
   ['Dodo Payments', 'https://dodopayments.com'],
   ['Edge City', 'https://www.edgecity.live'],
   ['Socket', 'https://socket.dev'],
   ['TigerGraph', 'https://www.tigergraph.com'],
-  ['Wispr Flow', 'https://wisprflow.ai'],
 ]
 
 const people = [

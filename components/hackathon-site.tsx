@@ -12,14 +12,64 @@ const navItems = [
   ['FAQs', 'faqs'],
 ]
 
-const partners = [
-  ['Wispr Flow', 'https://wisprflow.ai'],
-  ['Cake Wallet', 'https://cakewallet.com'],
-  ['AI Grants', 'https://aigrants.in'],
-  ['Dodo Payments', 'https://dodopayments.com'],
-  ['Edge City', 'https://www.edgecity.live'],
-  ['Socket', 'https://socket.dev'],
-  ['TigerGraph', 'https://www.tigergraph.com'],
+type Partner = {
+  name: string
+  url: string
+  tag?: string
+  logo?: string
+  tagline?: string
+}
+
+const partners: Partner[] = [
+  {
+    name: 'Wispr Flow',
+    url: 'https://wisprflow.ai',
+    tag: 'VOICE AI',
+    logo: '/wisprflow.png',
+    tagline: "Don't type, just speak.",
+  },
+  {
+    name: 'Cake Wallet',
+    url: 'https://cakewallet.com',
+    tag: 'PRIVACY WALLET',
+    logo: '/cake wallet.png',
+    tagline: 'A private, open-source wallet for everyone.',
+  },
+  {
+    name: 'AI Grants',
+    url: 'https://aigrants.in',
+    tag: 'GRANTS',
+    logo: '/aigi.png',
+    tagline: 'Funding AI research and builders in India.',
+  },
+  {
+    name: 'Dodo Payments',
+    url: 'https://dodopayments.com',
+    tag: 'PAYMENTS',
+    logo: '/dodo payments.png',
+    tagline: 'Payments for a borderless world.',
+  },
+  {
+    name: 'Edge City',
+    url: 'https://www.edgecity.live',
+    tag: 'COMMUNITY',
+    logo: '/edge city.png',
+    tagline: 'Places for builders.',
+  },
+  {
+    name: 'Socket',
+    url: 'https://socket.dev',
+    tag: 'OPEN SOURCE SECURITY',
+    logo: '/socket.png',
+    tagline: 'Security for the open-source ecosystem.',
+  },
+  {
+    name: 'TigerGraph',
+    url: 'https://www.tigergraph.com',
+    tag: 'GRAPH DATABASE',
+    logo: '/tiger graph.png',
+    tagline: 'Graph analytics for the enterprise.',
+  },
 ]
 
 const people = [
@@ -84,7 +134,45 @@ function About() {
 }
 
 function Partners() {
-  return <section className="section partners" id="partners"><div className="container"><SectionLabel>02 / in good company</SectionLabel><div className="partners-head"><h2>Stronger<br /><span>together.</span></h2><p>Technology companies, open-source projects and builder communities supporting a more open ecosystem.</p></div><div className="partner-grid">{partners.map(([name, url]) => <a className="partner-card" href={url} target="_blank" rel="noopener noreferrer" key={name}><span className="partner-external"><ExternalLink aria-hidden="true" /></span><strong>{name}</strong><span className="partner-description">Official partner website</span></a>)}</div></div></section>
+  return (
+    <section className="section partners" id="partners">
+      <div className="container">
+        <SectionLabel>02 / in good company</SectionLabel>
+        <div className="partners-head">
+          <h2>Stronger<br /><span>together.</span></h2>
+          <p>Technology companies, open-source projects and builder communities supporting a more open ecosystem.</p>
+        </div>
+        <div className="partner-grid">
+          {partners.map((partner) => (
+            <a
+              className="partner-card"
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={partner.name}
+            >
+              <div className="partner-top">
+                {partner.tag ? <span className="partner-tag">{partner.tag}</span> : <span />}
+                <span className="partner-external">
+                  <ArrowUpRight aria-hidden="true" />
+                </span>
+              </div>
+              <div className="partner-body">
+                {partner.logo ? (
+                  <img src={partner.logo} alt={partner.name} className="partner-logo" />
+                ) : (
+                  <strong>{partner.name}</strong>
+                )}
+              </div>
+              <span className="partner-description">
+                {partner.tagline || 'Official partner website'}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 function PeopleSection() {

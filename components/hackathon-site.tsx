@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { ArrowDown, ArrowUpRight, ExternalLink, Menu, Minus, Plus, X } from 'lucide-react'
 
-const APPLICATION_URL = process.env.NEXT_PUBLIC_APPLICATION_URL || '#apply'
+const APPLICATION_URL = process.env.NEXT_PUBLIC_APPLICATION_URL || 'https://hacker-house-goa-2026.devfolio.co/'
 
 const navItems = [
   ['About', 'about'],
@@ -73,10 +73,10 @@ const partners: Partner[] = [
 ]
 
 const people = [
-  { name: 'Daavya', role: 'Speaker', company: 'Marketing India - Cake Wallet', initials: 'D', image: '/Daavya.png' },
+  { name: 'Daavya Vaishnav', role: 'Speaker', company: 'Marketing India - Cake Wallet', url: 'https://x.com/Daavya_vaishnav', initials: 'D', image: '/Daavya.png' },
   { name: 'Davin Dong', role: 'Judge', company: 'Founder of Cookiy Labs', initials: 'DD', image: '/Davin Dong .jpeg' },
   { name: 'Rohan Kochhar', role: 'Speaker', company: 'India Growth - Wispr Flow', initials: 'RK', image: '/Rohan.png' },
-  { name: 'Devanshu', role: 'Speaker', company: 'Devrel - Tiger graph', initials: 'D', image: '/Devanshu.png' },
+  { name: 'Devanshu', role: 'Speaker', company: 'Devrel - Tiger graph', url: 'https://x.com/devanshucodes', initials: 'D', image: '/Devanshu.png' },
 ]
 
 const faqs = [
@@ -176,7 +176,7 @@ function Partners() {
 }
 
 function PeopleSection() {
-  return <section className="section people" id="mentors"><div className="container"><div className="section-head people-head"><div><SectionLabel>03 / the people</SectionLabel><h2>Mentors<br /><span>& judges.</span></h2></div><p>Profiles will be announced soon.</p></div><div className="people-grid">{people.map((person, i) => <article className="person-card" key={i}><div className={`portrait portrait-${i}`}>{person.image ? <img src={person.image} alt={person.name} /> : <span>{person.initials}</span>}</div><div className="person-info"><div><h3>{person.name}</h3><p>{person.role} · {person.company}</p></div><span className="person-placeholder" aria-label="Profile link to be confirmed"><ExternalLink /></span></div></article>)}</div></div></section>
+  return <section className="section people" id="mentors"><div className="container"><div className="section-head people-head"><div><SectionLabel>03 / the people</SectionLabel><h2>Mentors<br /><span>& judges.</span></h2></div></div><div className="people-grid">{people.map((person, i) => <article className="person-card" key={i}><div className={`portrait portrait-${i}`}>{person.image ? <img src={person.image} alt={person.name} /> : <span>{person.initials}</span>}</div><div className="person-info"><div><h3>{person.name}</h3><p>{person.role} · {person.company}</p></div>{person.url ? <a href={person.url} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on X`}><ExternalLink /></a> : <span className="person-placeholder" aria-label="Profile link to be confirmed"><ExternalLink /></span>}</div></article>)}</div></div></section>
 }
 
 function FAQs() {
@@ -185,7 +185,7 @@ function FAQs() {
 }
 
 function Footer() {
-  return <footer className="footer"><div className="container footer-inner"><div><Brand /><p className="footer-copy">Hacker House Goa<br />A focused place to make things.</p><p className="footer-event">Goa, India · 28–31 October 2026</p></div><div className="footer-links"><div><span>Explore</span>{navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</div><div><span>Apply</span><a href={APPLICATION_URL}>Apply to participate <ArrowUpRight /></a><span className="footer-config">Contact and social links to be confirmed.</span></div></div></div><div className="container footer-bottom"><span>© 2026 Hacker House Goa. All rights reserved.</span><span>Hacker House Goa <span className="footer-sun">●</span></span></div></footer>
+  return <footer className="footer"><div className="container footer-inner"><div><Brand /><p className="footer-copy">Hacker House Goa<br />A focused place to make things.</p><p className="footer-event">Goa, India · 28–31 October 2026</p></div><div className="footer-links"><div><span>Explore</span>{navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</div><div><span>Apply</span><a href={APPLICATION_URL}>Apply to participate <ArrowUpRight /></a></div></div></div><div className="container footer-bottom"><span>© 2026 Hacker House Goa. All rights reserved.</span><span>Hacker House Goa <span className="footer-sun">●</span></span></div></footer>
 }
 
 export default function HackathonSite() {
